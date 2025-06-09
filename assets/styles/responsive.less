@@ -15,6 +15,17 @@
   }
 }
 
+.responsive-header() {
+  width: 100%;
+  max-width: @desktop;
+  margin: 0 auto;
+  padding: 0 @spacing-xxl 0 @spacing-xxxl;
+
+  @media (max-width: @tablet) {
+    padding: 0 @spacing-xl 0 @spacing-xxl;
+  }
+}
+
 // 响应式字体大小
 .responsive-font-size(@desktop-size, @tablet-size, @mobile-size) {
   font-size: @desktop-size;
@@ -66,4 +77,19 @@
   @media (max-width: @mobile) {
     flex-direction: column;
   }
-} 
+}
+
+// 响应式设备类型
+.responsive-mobile() {
+  display: none;
+  @media (max-width: @mobile) {
+    display: block;
+  }
+}
+
+.responsive-pc() {
+  display: block;
+  @media (max-width: @mobile) {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <div id="app" :class="{ 'font-en': currentLang === 'en' }">
-    <TheHeader />
+    <Header />
     <router-view />
   </div>
 </template>
@@ -8,7 +8,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import TheHeader from '@/components/TheHeader.vue'
+import Header from '@/components/Header.vue'
 
 const { locale } = useI18n()
 const currentLang = computed(() => locale.value)

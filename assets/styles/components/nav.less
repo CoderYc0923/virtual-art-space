@@ -1,6 +1,6 @@
 // 导航组件样式
-@import '../fonts.less';
-@import '../responsive.less';
+@import "../fonts.less";
+@import "../responsive.less";
 
 // 基础样式
 .header {
@@ -12,6 +12,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  .responsive-header();
 }
 
 .nav {
@@ -19,7 +20,20 @@
   height: @header-height;
   gap: @spacing-lg;
 
+  &-right {
+    .responsive-flex(row, space-between, center);
+    height: 100%;
+  }
+
+  &-title {
+    color: @text-color;
+    text-decoration: none;
+    font-size: @font-size-xxxl;
+    white-space: nowrap;
+  }
+
   &-links {
+    .responsive-pc();
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -39,7 +53,7 @@
     }
   }
 
-  &-menu {
+  /* &-menu {
     display: flex;
     align-items: center;
     gap: @spacing-lg;
@@ -75,7 +89,7 @@
         background-color: @primary-color;
       }
     }
-  }
+  } */
 
   &-mobile-toggle {
     display: none;
@@ -155,4 +169,4 @@
     display: flex;
     justify-content: center;
   }
-} 
+}
