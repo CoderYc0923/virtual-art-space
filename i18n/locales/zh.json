@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "projects": "项目",
+    "booking": "预定"
+  },
+  "home": {
+    "title": "欢迎来到虚拟艺术空间",
+    "description": "您的数字创意画布"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "我们致力于提供独特的虚拟艺术体验"
+  },
+  "projects": {
+    "title": "我们的项目",
+    "description": "探索我们的创意作品"
+  },
+  "booking": {
+    "title": "预约体验",
+    "description": "安排您的虚拟艺术体验"
+  }
+} 

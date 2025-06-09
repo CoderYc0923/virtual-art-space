@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "booking": "Booking"
+  },
+  "home": {
+    "title": "Welcome to Virtual Art Space",
+    "description": "Your digital canvas for creativity"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are dedicated to providing a unique virtual art experience"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "description": "Explore our creative works"
+  },
+  "booking": {
+    "title": "Book a Session",
+    "description": "Schedule your virtual art experience"
+  }
+} 

@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'HY Minzho';
+    src: url('/assets/fonts/HYMinzho.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/assets/fonts/EBGaramond.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// 定义字体族
+@font-family-zh: 'HY Minzho', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+@font-family-en: 'EB Garamond', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// 字体粗细
+@font-weight-light: 300;
+@font-weight-regular: 400;
+@font-weight-medium: 500;
+@font-weight-semibold: 600;
+@font-weight-bold: 700;
+
+// 字体大小
+@font-size-xs: 12px;
+@font-size-sm: 14px;
+@font-size-base: 16px;
+@font-size-lg: 18px;
+@font-size-xl: 20px;
+@font-size-xxl: 24px;
+
+// 行高
+@line-height-tight: 1.2;
+@line-height-base: 1.5;
+@line-height-loose: 1.8;
+
+// 字间距
+@letter-spacing-tight: -0.5px;
+@letter-spacing-base: 0;
+@letter-spacing-wide: 0.5px;
+
+// 全局字体类
+.font-zh {
+  font-family: @font-family-zh;
+}
+
+.font-en {
+  font-family: @font-family-en;
+}
+
+// 字体混入
+.font-base() {
+  font-family: @font-family-zh;
+  font-weight: @font-weight-regular;
+  line-height: @line-height-base;
+  letter-spacing: @letter-spacing-base;
+}
+
+.font-base-en() {
+  font-family: @font-family-en;
+  font-weight: @font-weight-regular;
+  line-height: @line-height-base;
+  letter-spacing: @letter-spacing-base;
+}
+
+.font-heading() {
+  font-family: @font-family-zh;
+  font-weight: @font-weight-semibold;
+  line-height: @line-height-tight;
+  letter-spacing: @letter-spacing-tight;
+}
+
+.font-heading-en() {
+  font-family: @font-family-en;
+  font-weight: @font-weight-semibold;
+  line-height: @line-height-tight;
+  letter-spacing: @letter-spacing-tight;
+}
+
+.font-light() {
+  font-weight: @font-weight-light;
+}
+
+.font-regular() {
+  font-weight: @font-weight-regular;
+}
+
+.font-medium() {
+  font-weight: @font-weight-medium;
+}
+
+.font-semibold() {
+  font-weight: @font-weight-semibold;
+}
+
+.font-bold() {
+  font-weight: @font-weight-bold;
+}
