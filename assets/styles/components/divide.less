@@ -1,0 +1,18 @@
+.divide {
+  text-align: center;
+  border-bottom: 2px solid @text-color;
+  transform: scaleY(0.5); /* 在非Retina屏上不需要缩放 */
+  transform-origin: 0 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  border-bottom: 2px solid @text-color;
+  transform: scaleY(0.5); /* 在非Retina屏上不需要缩放 */
+  transform-origin: 0 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    border-bottom: 3px solid @text-color;
+    transform: scaleY(0.333); /* 在非Retina屏上不需要缩放 */
+    transform-origin: 0 0;
+}

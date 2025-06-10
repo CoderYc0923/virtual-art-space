@@ -34,5 +34,18 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  app: {
+    head: {
+      title: '山之家',
+      meta: [
+        {
+          name: 'keywords', content: '山之家,旅馆,住宿,艺术,古道具,家具,展览'
+        },
+        {
+          name: 'viewport', content: 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
+        },
+      ]
+    },
   }
 })

@@ -6,52 +6,63 @@
       </div>
       <div class="nav-right">
         <div class="nav-links">
-          <NuxtLink to="/" class="nav-link">{{ $t("nav.home") }}</NuxtLink>
-          <NuxtLink to="/about" class="nav-link">{{
-            $t("nav.about")
-          }}</NuxtLink>
-          <NuxtLink to="/projects" class="nav-link">{{
-            $t("nav.projects")
-          }}</NuxtLink>
-          <NuxtLink to="/booking" class="nav-link">{{
-            $t("nav.booking")
-          }}</NuxtLink>
+          <NuxtLink
+            :to="nav.path"
+            class="nav-link"
+            v-for="(nav, nIndex) in navLinks"
+            :key="nIndex"
+            >{{ $t(nav.title) }}</NuxtLink
+          >
         </div>
-        <div class="language-switch">
-          <Select
-            v-model="currentLocale"
-            :options="languageOptions"
-            @change="handleLanguageChange"
-          />
-        </div>
+        <LanguageButton />
       </div>
     </nav>
+    <div class="float-button">
+      <HamburgerButton v-model="maskVisible" />
+    </div>
+    <div class="float-nav" v-if="maskVisible">
+      <NuxtLink
+        :to="nav.path"
+        class="float-nav-link"
+        v-for="(nav, nIndex) in navLinks"
+        :key="nIndex"
+        @click="handleClickLink"
+        >{{ $t(nav.title) }}</NuxtLink
+      >
+      <Divide width="50px" class="float-nav-divide" />
+    </div>
   </header>
 </template>
 
 <script setup>
-import Select from "./Select.vue";
+const maskVisible = ref(false);
 
-const { locale, setLocale } = useI18n();
-const currentLocale = ref(locale.value);
-
-const languageOptions = [
-  { label: "English", value: "en" },
-  { label: "简体中文", value: "zh" },
+const navLinks = [
+  {
+    path: "/",
+    title: "nav.home",
+  },
+  {
+    path: "/about",
+    title: "nav.about",
+  },
+  {
+    path: "/projects",
+    title: "nav.projects",
+  },
+  {
+    path: "/booking",
+    title: "nav.booking",
+  },
 ];
-
-// 从 localStorage 获取保存的语言设置
-onMounted(() => {
-  const savedLocale = localStorage.getItem("user-locale");
-  if (savedLocale) {
-    currentLocale.value = savedLocale;
-    setLocale(savedLocale);
-  }
-});
 
 const handleLanguageChange = (lang) => {
   setLocale(lang);
   localStorage.setItem("user-locale", lang);
+};
+
+const handleClickLink = () => {
+  maskVisible.value = false;
 };
 </script>
 
