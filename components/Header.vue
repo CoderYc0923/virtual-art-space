@@ -29,7 +29,9 @@
         @click="handleClickLink"
         >{{ $t(nav.title) }}</NuxtLink
       >
+      <LanguageButton />
       <Divide width="50px" class="float-nav-divide" />
+      <Websites />
     </div>
   </header>
 </template>
