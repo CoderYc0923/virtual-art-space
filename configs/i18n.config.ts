@@ -1,5 +1,5 @@
-import zh from './locales/zh.json'
-import en from './locales/en.json'
+import zh from '@/i18n/locales/zh.json'
+import en from '@/i18n/locales/en.json'
 
 export default defineI18nConfig(() => ({
     legacy: false, //默认legacy旧api，false使用组合式api

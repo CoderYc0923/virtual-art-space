@@ -11,6 +11,7 @@
             class="nav-link"
             v-for="(nav, nIndex) in navLinks"
             :key="nIndex"
+            @click="handleClickLink"
             >{{ $t(nav.title) }}</NuxtLink
           >
         </div>
@@ -37,6 +38,10 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { locale,setLocale ,setLocaleCookie, getLocaleCookie } = useI18n()
+
 const maskVisible = ref(false);
 
 const navLinks = [
@@ -58,13 +63,11 @@ const navLinks = [
   },
 ];
 
-const handleLanguageChange = (lang) => {
-  setLocale(lang);
-  localStorage.setItem("user-locale", lang);
-};
-
 const handleClickLink = () => {
   maskVisible.value = false;
+  const currentLocale = getLocaleCookie();
+  setLocale(currentLocale)
+  setLocaleCookie(currentLocale);
 };
 </script>
 

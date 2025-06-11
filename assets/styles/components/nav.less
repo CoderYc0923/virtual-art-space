@@ -28,7 +28,7 @@
   &-title {
     color: @text-color;
     font-size: @font-size-xxxl;
-    white-space: nowrap;
+    letter-spacing: @letter-spacing-title;
   }
 
   &-links {
@@ -79,7 +79,7 @@
 
 .float-button {
   position: fixed;
-  top: 32px;
+  top: 63px;
   right: 28px;
   z-index: @float-button-z-index;
   .responsive-mobile();
@@ -97,7 +97,33 @@
 // 移动端样式
 @media (max-width: @mobile) {
   .header {
+    height: @header-height;
+    position: relative;
+  }
+
+  .float-button {
+    top: 63px;
+  }
+}
+
+@media (max-width: @mobile-7plus) {
+  .header {
     height: @header-height-sm;
     position: relative;
+  }
+
+  .float-button {
+    top: 37px;
+  }
+}
+
+@media (max-width: @mobile-SE) {
+  .header {
+    height: @header-height-sm;
+    position: relative;
+  }
+
+  .float-button {
+    top: 37px;
   }
 }

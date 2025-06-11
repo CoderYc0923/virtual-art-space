@@ -1,16 +1,16 @@
 <template>
-  <div id="app" :class="{ 'font-en': currentLang === 'en' }">
+  <div id="app" :class="{ 'font-en': locale === 'en' }">
     <Header />
     <router-view />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n()
-const currentLang = computed(() => locale.value)
+const { locale, setLocale } = useI18n()
+
 </script>
 
 <style lang="less">
