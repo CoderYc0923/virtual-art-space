@@ -5,8 +5,7 @@
 // 基础样式
 .header {
   height: @header-height;
-  background-color: @background-color;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -48,7 +47,7 @@
     white-space: nowrap;
 
     &:hover {
-      color: @primary-color;
+      .text-hover();
     }
   }
 }
@@ -70,6 +69,9 @@
     color: @text-color;
     font-size: @font-size-xxl;
     margin-bottom: 28px;
+    &:hover {
+      .text-hover();
+    }
   }
 
   &-divide {
@@ -98,7 +100,6 @@
 @media (max-width: @mobile) {
   .header {
     height: @header-height;
-    position: relative;
   }
 
   .float-button {
@@ -109,7 +110,6 @@
 @media (max-width: @mobile-7plus) {
   .header {
     height: @header-height-sm;
-    position: relative;
   }
 
   .float-button {
@@ -120,7 +120,6 @@
 @media (max-width: @mobile-SE) {
   .header {
     height: @header-height-sm;
-    position: relative;
   }
 
   .float-button {

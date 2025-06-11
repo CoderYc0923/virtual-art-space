@@ -17,8 +17,6 @@
 
 .responsive-header() {
   width: 100%;
-  max-width: @desktop;
-  margin: 0 auto;
   padding: 0 @spacing-xxl 0 @spacing-xxxl;
 
   @media (max-width: @tablet) {
@@ -104,4 +102,13 @@
   @media (max-width: @mobile) {
     display: none;
   }
+}
+
+.text-hover() {
+  transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  opacity: 0.5;
 }

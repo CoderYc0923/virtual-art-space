@@ -9,7 +9,7 @@
           <NuxtLink
             :to="nav.path"
             class="nav-link"
-            v-for="(nav, nIndex) in navLinks"
+            v-for="(nav, nIndex) in navRoutes"
             :key="nIndex"
             @click="handleClickLink"
             >{{ $t(nav.title) }}</NuxtLink
@@ -25,7 +25,7 @@
       <NuxtLink
         :to="nav.path"
         class="float-nav-link"
-        v-for="(nav, nIndex) in navLinks"
+        v-for="(nav, nIndex) in navRoutes"
         :key="nIndex"
         @click="handleClickLink"
         >{{ $t(nav.title) }}</NuxtLink
@@ -38,30 +38,12 @@
 </template>
 
 <script setup>
+import { navRoutes } from '@/configs/router.config.ts'
 import { useI18n } from 'vue-i18n'
 
 const { locale,setLocale ,setLocaleCookie, getLocaleCookie } = useI18n()
 
 const maskVisible = ref(false);
-
-const navLinks = [
-  {
-    path: "/",
-    title: "nav.home",
-  },
-  {
-    path: "/about",
-    title: "nav.about",
-  },
-  {
-    path: "/projects",
-    title: "nav.projects",
-  },
-  {
-    path: "/booking",
-    title: "nav.booking",
-  },
-];
 
 const handleClickLink = () => {
   maskVisible.value = false;

@@ -5,6 +5,9 @@
   color: @text-color;
   font-size: @font-size-base;
   cursor: pointer;
+  &:hover {
+    .text-hover();
+  }
 
   @media (max-width: @tablet) {
     font-size: @font-size-sm;

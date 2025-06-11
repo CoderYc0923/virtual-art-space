@@ -1,0 +1,22 @@
+.home {
+  min-height: 100vh;
+  background-image: url(../../image/home.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+// 平板端样式
+@media (max-width: @tablet) {
+  .home {
+    background-image: url(../../image/home_tablet.jpg);
+  }
+}
+
+// 移动端样式
+@media (max-width: @mobile) {
+  .home {
+    background-image: url(../../image/home_mobile.jpg);
+  }
+}
